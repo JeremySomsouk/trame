@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="492" viewBox="0 0 860 492"
+     role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" fill="#faf5f3">
+  <title id="title">Trame architecture</title>
+  <desc id="desc">Both native apps embed the same Rust catalog engine. Its playlist and Xtream modules
+    parse catalog data and resolve media addresses. Swift calls Rust through a C interface and Kotlin
+    through JNI. Each frontend handles its own networking, storage and playback. Both apps bundle the
+    same three offline films and posters.</desc>
+  <style>
+    .heading { font-size: 26px; font-weight: 700; }
+    .body { font-size: 18px; }
+    .label { fill: #d1bdc2; font-size: 16px; }
+    .file { fill: #ff92a4; font-family: Menlo, Consolas, monospace; font-size: 15px; }
+    .bridge { fill: #ff92a4; font-size: 17px; font-weight: 700; }
+  </style>
+  <rect width="860" height="492" rx="10" fill="#1a1418"/>
+
+  <g>
+    <rect x="24" y="20" width="812" height="142" rx="5" fill="#302128" stroke="#99616d"/>
+    <text class="heading" x="44" y="60">Rust catalog engine</text>
+    <text class="file" x="815" y="57" text-anchor="end">Core/</text>
+    <path d="M44 80H816" stroke="#5e414a"/>
+    <text class="body" x="44" y="109" font-weight="700">Playlist</text>
+    <text class="label" x="44" y="136">Parse M3U catalogs and identify HLS streams.</text>
+    <text class="body" x="442" y="109" font-weight="700">Xtream</text>
+    <text class="label" x="442" y="136">Build request URLs and parse catalogs and episodes.</text>
+  </g>
+
+  <g fill="none" stroke="#ff92a4" stroke-width="2" stroke-linejoin="round">
+    <path d="M48 163v55m-4-51 4-4 4 4m-8 47 4 4 4-4"/>
+    <path d="M467 163v55m-4-51 4-4 4 4m-8 47 4 4 4-4"/>
+  </g>
+  <text class="bridge" x="63" y="196">C ABI</text>
+  <text class="label" x="119" y="196">·  static library</text>
+  <text class="bridge" x="482" y="196">JNI</text>
+  <text class="label" x="519" y="196">·  shared library</text>
+
+  <g>
+    <rect x="24" y="220" width="393" height="158" rx="5" fill="#251e23" stroke="#614e57"/>
+    <rect x="443" y="220" width="393" height="158" rx="5" fill="#251e23" stroke="#614e57"/>
+    <text class="heading" x="44" y="257">macOS</text>
+    <text class="label" x="397" y="255" text-anchor="end">Swift / SwiftUI</text>
+    <text class="heading" x="463" y="257">Android</text>
+    <text class="label" x="816" y="255" text-anchor="end">Kotlin / Android Views</text>
+    <path d="M44 272h353m66 0h353" fill="none" stroke="#4b3c45"/>
+    <g class="label">
+      <text x="44" y="301">Catalog requests</text>
+      <text x="44" y="330">Playback</text>
+      <text x="44" y="359">Local storage</text>
+      <text x="463" y="301">Catalog requests</text>
+      <text x="463" y="330">Playback</text>
+      <text x="463" y="359">Local storage</text>
+    </g>
+    <g class="body">
+      <text x="190" y="301">URLSession</text>
+      <text x="190" y="330">AVKit / AVPlayer</text>
+      <text x="190" y="359">Library and activity JSON</text>
+      <text x="609" y="301">HttpURLConnection</text>
+      <text x="609" y="330">VideoView</text>
+      <text x="609" y="359">SQLite</text>
+    </g>
+  </g>
+
+  <path d="M48 379v30m419-30v30" fill="none" stroke="#a28b95" stroke-width="2" stroke-dasharray="4 4"/>
+  <rect x="24" y="410" width="812" height="62" rx="5" fill="#251e23" stroke="#614e57"/>
+  <text class="file" x="44" y="447">Shared/Resources/</text>
+  <text class="body" x="235" y="447">Both apps bundle the same three offline films and their posters.</text>
+</svg>

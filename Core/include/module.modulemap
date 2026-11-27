@@ -1,0 +1,4 @@
+module CTrameCore [system] {
+    header "trame_core.h"
+    export *
+}

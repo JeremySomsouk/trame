@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>Trame</string>
+<key>CFBundleName</key><string>Trame</string>
+<key>CFBundleIdentifier</key><string>app.trame.player</string>
+<key>CFBundleDevelopmentRegion</key><string>fr</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>CFBundleIconFile</key><string>Trame</string>
+<key>CFBundleShortVersionString</key><string>0.1.0</string>
+<key>CFBundleVersion</key><string>0.1.0</string>
+<key>LSMinimumSystemVersion</key><string>14.0</string>
+<!-- Catalogs, redirects and media may be hosted on different user-supplied HTTP servers. -->
+<key>NSAppTransportSecurity</key><dict>
+  <key>NSAllowsArbitraryLoads</key><true/>
+</dict>
+<key>NSHighResolutionCapable</key><true/>
+</dict></plist>
